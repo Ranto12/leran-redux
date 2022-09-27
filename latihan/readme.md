@@ -168,13 +168,13 @@ store.dispatch(buyCake())
 store.dispatch(buyIcecream())
 store.dispatch(buyIcecream())
 
-
 unsubscribe()
 ```
 
 Asynnc redux
 
 dalam melakukan fact data, reducer mempunyai 3 case yaitu
+```
 case : FETCH_USERS_REQUEST
     loading: true
 case : FETCH_USERS_SUCCESS
@@ -183,3 +183,65 @@ case : FETCH_USERS_SUCCESS
 case : FETCH_USERS_FAILURE
     loading : false
     error   : error (from API)
+```
+
+
+```
+import { createStore } from "redux"
+
+// create initial state
+const initialState ={
+    loading: false,
+    users: [],
+    error: ''
+}
+
+const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
+const  FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
+const  FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
+
+const fetchUsersRequest =() =>{
+    return{
+        type : FETCH_USERS_REQUEST
+    }
+}
+
+const fetchUsersSuccess = users =>{
+    return{
+        type : FETCH_USERS_SUCCESS,
+        paload : users
+    }
+}
+
+const fetchUsersFailure = error =>{
+    return{
+        type : FETCH_USERS_FAILURE,
+        paload : error
+    }
+}
+
+const reducer =( state = initialState, action)=>{
+    switch(action.type){
+        case FETCH_USERS_REQUEST :
+            return{
+                ...state,
+                loading : true
+
+            }
+        case FETCH_USERS_SUCCESS :
+            return{
+                loading : false,
+                users : action.payload,
+                error: ''
+            }
+        case FETCH_USERS_FAILURE :
+            return{
+                loading : false,
+                users : [],
+                error: action.payload
+            }
+    }
+}
+
+const store = createStore(reducer)
+```

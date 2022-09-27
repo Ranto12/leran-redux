@@ -1,0 +1,14 @@
+{
+  "name": "latihan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "react-redux": "^8.0.4",
+    "redux": "^4.2.0",
+    "redux-devtools": "^3.7.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.2.1"
+  }
+}

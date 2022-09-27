@@ -95,8 +95,9 @@ Middleware
 Focus to how to use a middleware in redux
 Import applyMiddleware = from redux
 Masukan dalam 
-``` const store = createStore(rootReducer, applyMiddleware(logger))
-
+``` 
+const store = createStore(rootReducer, applyMiddleware(logger))
+```
 ```
 import { combineReducers, createStore, applyMiddleware } from "redux"
 import loggers from "redux-logger"
@@ -173,4 +174,12 @@ unsubscribe()
 
 Asynnc redux
 
-
+dalam melakukan fact data, reducer mempunyai 3 case yaitu
+case : FETCH_USERS_REQUEST
+    loading: true
+case : FETCH_USERS_SUCCESS
+    loading : false
+    users   : data (from API)
+case : FETCH_USERS_FAILURE
+    loading : false
+    error   : error (from API)

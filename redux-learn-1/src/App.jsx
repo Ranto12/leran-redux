@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
 import Counter from './component/counter'
 import User from './component/Users/User'
 

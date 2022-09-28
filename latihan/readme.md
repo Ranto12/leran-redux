@@ -245,3 +245,18 @@ const reducer =( state = initialState, action)=>{
 
 const store = createStore(reducer)
 ```
+
+
+## asycn action creators
+ membutuhkan 
+ - axios => request ke api end point
+ - redux-thunk => mendefinisikan asycn creators  
+ menggunakan middelware
+
+```
+redux thunk
+```
+ini memungkinkan fungsi penulisan dengan logika di dalamnya yang dapat berinteraksi dengan toko dispatch dengan getState metode Redux
+```
+https://www.npmjs.com/package/redux-thunk
+```
